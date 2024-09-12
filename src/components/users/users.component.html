@@ -1,0 +1,25 @@
+<app-error-request [errorMessage]="errorMessage" *ngIf="errorMessage" />
+
+@for (item of allUsers; track item.id) {
+<div
+  class="card container w-100 mt-3"
+  style="width: 18rem"
+  *ngIf="!errorMessage"
+  [appOddoreven]="$index + 1"
+  [class.mb-3]="$last"
+>
+  <ul class="list-group list-group-flush" [appOddoreven]="$index + 1">
+    <li class="list-group-item" [appOddoreven]="$index + 1">
+      {{ "users.details.id" | translate | titlecase }} {{ " : " + item.id }}
+    </li>
+    <li class="list-group-item" [appOddoreven]="$index + 1">
+      {{ "users.details.name" | translate | titlecase }}{{ " : " + item.name }}
+    </li>
+    <li class="list-group-item" [appOddoreven]="$index + 1">
+      {{ "users.details.email" | translate | titlecase
+      }}{{ " : " + item.email }}
+    </li>
+  </ul>
+  <app-button-services class="mt-3" [userDetails]="item" />
+</div>
+}

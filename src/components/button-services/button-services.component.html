@@ -1,0 +1,13 @@
+<button
+  class="btn btn-success w-100 mt-2"
+  [routerLink]="['/users/posts']"
+  (click)="showPosts()"
+>
+  {{ "users.buttons.posts" | translate | titlecase }}
+</button>
+<button class="btn btn-secondary w-100 mt-2" (click)="showTodos()">
+  {{ "users.buttons.todos" | translate | titlecase }}
+</button>
+<button class="btn btn-dark w-100 my-2" (click)="showPhotos()">
+  {{ "users.buttons.photos" | translate | titlecase }}
+</button>

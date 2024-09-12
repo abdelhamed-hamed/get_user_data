@@ -1,0 +1,16 @@
+<app-error-request [errorMessage]="errorMessage" *ngIf="errorMessage" />
+@for (item of allPhotos; track $index) {
+<div class="card my-5 mx-auto w-50" style="width: 18rem" *ngIf="!errorMessage">
+  <img [src]="item.url" class="card-img-top" alt="Photos" />
+  <div class="card-body">
+    <h5 class="card-title">{{ item.title }}</h5>
+    <a
+      [href]="item.thumbnailUrl"
+      class="btn w-100 mt-3"
+      target="_blank"
+      [ngClass]="$even ? 'btn-danger' : 'btn-success'"
+      >{{ "show photo" | titlecase }}</a
+    >
+  </div>
+</div>
+}

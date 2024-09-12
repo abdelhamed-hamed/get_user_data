@@ -1,0 +1,30 @@
+<app-error-request [errorMessage]="errorMessage" *ngIf="errorMessage" />
+@for (item of allpost; track $index) {
+<div
+  class="card container w-100 mt-3"
+  style="width: 18rem"
+  *ngIf="!errorMessage"
+  [ngClass]="$even ? 'bg-danger-subtle' : 'bg-primary-subtle'"
+  [class.bg-danger-subtle]="$even"
+  [class.bg-primary-subtle]="$odd"
+  [class.mb-3]="$last"
+>
+  <ul
+    class="list-group list-group-flush"
+    [ngClass]="$even ? 'bg-danger-subtle' : 'bg-primary-subtle'"
+  >
+    <li
+      class="list-group-item"
+      [ngClass]="$even ? 'bg-danger-subtle' : 'bg-primary-subtle'"
+    >
+      {{ item.title }}
+    </li>
+    <li
+      class="list-group-item"
+      [ngClass]="$even ? 'bg-danger-subtle' : 'bg-primary-subtle'"
+    >
+      {{ item.body }}
+    </li>
+  </ul>
+</div>
+}

@@ -1,0 +1,17 @@
+{
+  "users": {
+    "details": {
+      "id": "id",
+      "name": "name",
+      "email": "email"
+    },
+    "buttons": {
+      "posts": "show posts",
+      "todos": "show todos",
+      "photos": "show photos"
+    }
+  },
+  "photos": {
+    "showphoto": "showphoto"
+  }
+}
