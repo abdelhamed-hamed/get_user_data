@@ -11,9 +11,10 @@ export class PostsComponent implements OnInit {
   id!: string;
   allpost!: Posts[];
   errorMessage!: string;
-  constructor(private activateRoute: ActivatedRoute) {}
+  constructor(private activateRoute: ActivatedRoute, private title: Title) {}
 
   ngOnInit(): void {
+    this.title.setTitle('Posts');
     this.getPosts();
   }
 
