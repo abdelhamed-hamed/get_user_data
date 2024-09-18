@@ -10,8 +10,9 @@ import { Subscription } from 'rxjs';
 export class PhotosComponent implements OnInit {
   allPhotos!: Photos[];
   errorMessage?: string;
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private title: Title) {}
   ngOnInit(): void {
+    this.title.setTitle('Photos');
     this.getAllPhotos();
   }
 
